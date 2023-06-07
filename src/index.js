@@ -12,13 +12,10 @@ const root = ReactDOMClient.createRoot(document.getElementById('root'));
 // let rerenderEntireTree = () => {
 
     root.render(
+            // <BrowserRouter basename={process.env.PUBLIC_URL}>
             <HashRouter>
                 <Provider store={store}>
-                    <App
-                        store={store}
-                    // appState={store.getState()}
-                    // dispatch={store.dispatch.bind(store)}
-                    />
+                    <App store={store} />
                 </Provider>
             </HashRouter>
     )
