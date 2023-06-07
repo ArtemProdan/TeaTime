@@ -1,0 +1,47 @@
+.music {
+    color: white;
+    padding: 40px;
+    font-size: 24px;
+    position: relative;
+}
+
+.some {
+    color: red;
+    /* margin-left: -100px; */
+    opacity: 0;
+}
+
+.btn {
+    color: yellow;
+    background-color: aliceblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.my-node-enter {
+    /* margin-left: 10px; */
+    scale: 0;
+    transform: translateY(-50%);
+    transition: all 2s ease;
+    opacity: 1;
+
+  }
+  .my-node-enter-active {
+    scale: 20;
+    transition: all 2s ease;
+    transform: translateX(50%);
+    opacity: 1;
+
+  }
+  /* .my-node-exit {
+    margin-left: 500px;
+    transition: all 2s ease;
+    opacity: 1;
+  }
+  .my-node-exit-active {
+    opacity: 0;
+    margin-left: 500px;
+    transition: all 2s ease;
+    transition: opacity 2000ms;
+  } */

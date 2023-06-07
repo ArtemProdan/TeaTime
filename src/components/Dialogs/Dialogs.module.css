@@ -1,0 +1,269 @@
+.dialogs {
+    display: flex;
+    width: 100%;
+    /* background-color: var(--color-2); */
+    border-radius: 8px;
+    height: 100vh;
+    /* background: #114357;  fallback for old browsers */
+    /* background: linear-gradient(to right, #0b410b, #026d0b, #0b410b);  */
+    /* background: var(--gradient-blue); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* box-shadow: 0px 10px 20px rgb(255, 255, 255); */
+    /* border-right: 1px solid black;
+    border-left: 1px solid black; */
+    animation: onload 0.5s linear 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0; 
+    z-index: 10;
+}
+
+@keyframes onload {
+    0% {
+        opacity: 0.5;
+        /* scale: 0.9;  */
+        /* transform: translateX(-100%); */
+    }
+
+    50% {
+        /* scale: 1.01 */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes onload_left {
+    0% {
+        opacity: 0;
+        /* scale: 0.9;  */
+        transform: translateX(-8%);
+    }
+
+    50% {
+        /* scale: 1.01 */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.left {
+    width: 25%;
+    height: 100%;
+    border-right: 1px solid var(--color-my);
+    /* background-color: var(--color-1); */
+    background-color: rgb(0, 11, 26);
+    padding: 5px;
+    overflow: auto;
+    animation: onload_left 0.3s ease 1;
+}
+
+@media (prefers-color-scheme:light) {
+    .left {
+        border-right: 1px solid var(--color-my);
+        background-color: white;
+    }
+}
+
+.left::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--color-2);
+}
+
+.left::-webkit-scrollbar-thumb {
+    background-color: var(--color-3);
+    border-radius: 15px;
+    padding-right: 5px;
+}
+
+.left::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: var(--color-2);
+}
+
+.dialog__item {
+    text-align: left;
+    display: flex;
+    padding: 5px 10px;
+    margin: 5px 0;
+    align-items: flex-end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dialog__item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.right {
+    background-color: var(--color-my);
+    overflow: hidden;
+    width: 75%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages_wrapper {
+    overflow-y: scroll;
+    flex: 0 1 85%;
+    padding: 20px;
+    background-image: url(../../img/telegram-chats2.jpg);
+    background-size: cover;
+
+}
+
+.messages_wrapper::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--color-2);
+}
+
+.messages_wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--color-3);
+    border-radius: 15px;
+    padding-right: 5px;
+}
+
+.messages_wrapper::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: var(--color-2);
+}
+
+.send_wrapper {
+    position: relative;
+    flex: 1 0 auto;
+}
+
+.right button {
+    position: absolute;
+    /* bottom: 30px;*/
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    z-index: 5;
+}
+
+.right button img {
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 20px;
+    align-self: center;
+    color: var(--color-7);
+    margin-bottom: 5px;
+}
+
+.other {
+    text-align: left;
+    max-width: auto;
+}
+
+.message {
+    transition: all 1s ease;
+    display: flex;
+    max-width: 200px;
+    white-space: wrap;
+}
+.message span {
+    color: var(--color-7);
+    width: auto;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: rgb(94, 94, 136);
+    margin-bottom: 5px;
+    transition: all 1s ease;
+}
+
+
+
+@keyframes message-animation {
+    0% {
+        opacity: 0.5;
+        transform: scaleX(0);
+        transform: translateX(-50%);
+    }
+
+    50% {
+        /* scale: 1.01 */
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+.my {
+    color: green;
+}
+
+.texttosend {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px 100px 20px 20px;
+    font-size: 24px;
+    color: var(--color-7);
+    background-color: var(--color-1);
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.452);
+    z-index: 1;
+}
+
+.texttosend::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--color-2);
+}
+
+.texttosend::-webkit-scrollbar-thumb {
+    background-color: var(--color-3);
+    border-radius: 15px;
+    padding-right: 5px;
+}
+
+.texttosend::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: var(--color-2);
+}
+
+
+.dialogNavs a {
+    height: 70px;
+    width: 100%;
+    background-color: var(--color-1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    overflow: hidden;
+  }
+  
+  .dialogNavs a img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 20px 0 10px;
+  } 
+
+  .dialogNavs a h1{
+    font-size: 34px;
+  } 

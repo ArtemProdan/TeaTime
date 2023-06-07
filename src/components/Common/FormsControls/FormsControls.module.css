@@ -1,0 +1,29 @@
+/* .formControl textarea {
+    background-color: rgb(255, 255, 255);
+} */
+
+.formControl.error input,
+.formControl.error textarea {
+    border: 2px solid red;
+    background-color: rgb(240, 175, 175);
+}
+
+.formControl.error span {
+    color: red;
+    font-size: 20px;
+}
+
+.form_summary_error {
+    margin: -20px 0;
+    color: red;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 24px;
+    transform: scale(0);
+    height: 0;
+}
+
+.form_summary_error.active {
+    transform: scale(1);
+    height: 40px;
+}

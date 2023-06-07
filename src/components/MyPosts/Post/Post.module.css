@@ -1,0 +1,79 @@
+.item {
+    /* color: rgb(85, 85, 85); */
+    text-align: left;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    /* border-radius: 10px; */
+    padding: 15px 80px 15px 10px;
+    margin-bottom: 20px;
+    /* border: 2px solid rgb(133, 133, 133); */
+    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.527); */
+    border-bottom: 1px solid rgb(105, 105, 105);
+    position: relative;
+    /* color: var(--text-main-color); */
+    color: var(--color-7);
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+}
+
+.item span {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.item span img{
+    width: 20px;
+    height: 20px;
+    /* margin-top: 25px; */
+    top: 10px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.right_block {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* border-left: 1px solid #272727; */
+    text-align: center;
+    width: 70px;
+}
+
+.right_block span {
+   display: flex;
+   align-self: center;
+   margin-right: 50%;
+   transform: translateX(85%);
+}
+.right_block span img{
+  margin-top: -7px;
+}
+.right_block button{
+  background-color: transparent;
+  border: none;
+  margin: 5px -30px 0 0;
+  width: 25px;
+  height: 25px;
+}
+.right_block button img{
+    width: 100%;
+    height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+.right_block button img:hover{
+  opacity: 0.8;
+  scale: 0.8;
+}

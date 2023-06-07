@@ -1,0 +1,266 @@
+/* ***********************************MY STYLES************************************* */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: white;
+  /* background-color: #1e1e1e; */
+}
+
+html.light {
+  color: #b91111;
+  /* background-color: #fcfcfc; */
+}
+
+:root {
+  /* --color-1: #1e1e1e; */
+  --color-1: rgb(24, 29, 28);
+  --color-2: #272727;
+  --color-2: #1a1a1a;
+  --color-3: #424242;
+  --color-4: #555555;
+  --color-5: #686868;
+  --color-6: #7b7b7b;
+  --color-7: #b8b8b8;
+  --color-8: #ffffff;
+
+  --header: var(--color-2);
+  --navbar: var(--color-7);
+  --profile: var(--color-2);
+}
+
+
+html.light:root {
+  --color-my: #b8b8b8;
+  --color-1: #ffffff;
+  --color-2: #b8b8b8;
+  --color-3: #7b7b7b;
+  --color-4: #686868;
+  --color-5: #555555;
+  --color-6: #424242;
+  --color-7: #272727;
+  --color-8: #1e1e1e;
+
+  --header: var(--color-1);
+  --navbar: var(--color-1);
+  --profile: var(--color-1);
+  --news: var(--color-2);
+}
+
+
+html.light body {
+  backdrop-filter: brightness(0.9);
+  background-image: none;
+  background: rgb(139, 133, 231);
+  background: rgb(165, 160, 235);
+  background: linear-gradient(280deg, rgba(165, 160, 235), rgb(84, 64, 131), rgba(139, 133, 231));
+  backdrop-filter: brightness(0.3);
+}
+
+
+body {
+  background-color: rgb(22, 22, 22);
+  background-size: cover;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  /* min-width: 1920px; */
+  width: 100vw;
+  height: 100vh;
+  /* background-image: url(./img/telegram2.jpg); */
+  backdrop-filter: brightness(0.9);
+  /* background-blend-mode:screen; */
+  color: #7b7b7b;
+}
+
+/*
+ @media (prefers-color-scheme:light) {
+  :root {
+    --color-my: #b8b8b8;
+    --color-1: #ffffff;
+    --color-2: #b8b8b8;
+    --color-3: #7b7b7b;
+    --color-4: #686868;
+    --color-5: #555555;
+    --color-6: #424242;
+    --color-7: #272727;
+    --color-8: #1e1e1e;
+    ;
+  }
+  
+  body {
+    backdrop-filter: brightness(1);
+    background-blend-mode:luminosity;
+    background-color: var(--color-1);
+  }
+}
+*/
+
+
+body::-webkit-scrollbar {
+  width: 0px;
+  background-color: rgba(0, 0, 0, 0.753);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #833b3b46;
+  border-radius: 15px;
+  padding-right: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset; */
+  background-color: #30303000;
+}
+
+.App {
+  display: grid;
+  grid-template-areas:
+    "h h h h"
+    "l n c r";
+  grid-template-columns: 1fr 0.3fr 3fr 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  text-align: center;  
+   /* padding: 0 20px; */
+   /* justify-content: space-around; */
+  transform: translateY(1px);
+  /* display: flex; */
+  width: 100vw;
+  /* gap: 10px; */
+
+}
+
+.header {
+  grid-area: h;
+  background-color: #b91111;
+}
+
+.nav {
+  grid-area: n;
+  /* margin-top: 80px; */
+  flex: 0 1 15%;
+
+}
+
+.content {
+  grid-area: c;
+  /* overflow: auto; */
+  height: 90vh;
+  border-radius: 10px;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  /* margin-top: 80px; */
+  flex: 0 1 100%;
+  position: relative;
+  /* transform: translateY(1px); */
+  top: -1px;
+}
+
+.content::-webkit-scrollbar {
+  width: 0px;
+  background-color: rgba(0, 0, 0, 0.753);
+}
+
+.l,
+.r {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 0;
+  border-radius: 10px;
+  /* height: 90vh; */
+  /* flex: 0 1 25%; */
+  /* margin-top: 80px; */
+  /* max-width: 25%; */
+}
+
+.l {
+  grid-area: l;
+  /* padding-top: 80px; */
+}
+
+.r {
+  grid-area: r;
+  padding-right: 40px;
+  /* margin-top: 83px; */
+  /* flex: 0 1 20%; */
+}
+
+@media screen and (max-width: 780px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 1fr 0.25fr;
+    grid-template-areas:
+    "h"
+    "c"
+    "n";
+  }
+  .content {
+    overflow: hidden;
+  }
+  .r {
+    display: none;
+  }
+}
+
+/* ======================TRANSITION GROUP======================= */
+
+/* .my-myrout-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.my-myrout-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+  transform: translateX(0);
+
+}
+.my-myrout-exit {
+  opacity: 1;
+  transform: translateX(50%);
+
+}
+.my-myrout-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+  transform: translateX(100%);
+
+} 
+*/
+.preloader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0);
+  opacity: 0.7;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.preloader img {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-top: 20%;
+  /* transform: translateY(-70%); */
+}
+
+.error {
+  color: red;
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

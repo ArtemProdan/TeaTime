@@ -1,0 +1,220 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Joseph",
+            "lastName": "Morrison",
+            "location": {
+                "city": "New Braunswick",
+                "state": "New Jersey",
+                "country": "USA"
+            },
+            "avatar": "ImagesArray[0]",
+            "followed": false
+        },
+        {
+            "id": 2,
+            "firstName": "Marriah",
+            "lastName": "Cruz",
+            "location": {
+                "city": "Irapuato",
+                "state": "Guanajuato",
+                "country": "Mexico"
+            },
+            "avatar": "ImagesArray[1]",
+            "followed": false
+        },
+        {
+            "id": 3,
+            "firstName": "Joshua",
+            "lastName": "Pooper",
+            "location": {
+                "city": "Houston",
+                "state": "Texas",
+                "country": "USA"
+            },
+            "avatar": "ImagesArray[2]",
+            "followed": true
+        },
+        {
+            "id": 4,
+            "firstName": "Adelaida",
+            "lastName": "Krakiv",
+            "location": {
+                "city": "Kyiv",
+                "state": "Kyiv Oblast",
+                "country": "Ukraine"
+            },
+            "avatar": "ImagesArray[3]",
+            "followed": false
+        },
+        {
+            "id": 5,
+            "firstName": "Skyler",
+            "lastName": "Asser",
+            "location": {
+                "city": "Toronto",
+                "state": "Ontario",
+                "country": "Canada"
+            },
+            "avatar": "ImagesArray[4]",
+            "followed": false
+        },
+        {
+            "id": 6,
+            "firstName": "Ronald",
+            "lastName": "Zhopko",
+            "location": {
+                "city": "Lviv",
+                "state": "Lviv Oblast",
+                "country": "Ukraine"
+            },
+            "avatar": "ImagesArray[5]",
+            "followed": true
+        },
+        {
+            "id": 7,
+            "firstName": "Private",
+            "lastName": "Kovalsky",
+            "location": {
+                "city": "Odessa",
+                "state": "Odessa Oblast",
+                "country": "Ukraine"
+            },
+            "avatar": "ImagesArray[6]",
+            "followed": false
+        },
+        {
+            "id": 8,
+            "firstName": "Simon",
+            "lastName": "Judeah",
+            "location": {
+                "city": "Los Angeles",
+                "state": "California",
+                "country": "USA"
+            },
+            "avatar": "ImagesArray[7]",
+            "followed": true
+        },
+        {
+            "id": 9,
+            "firstName": "Yuki",
+            "lastName": "Aoki",
+            "location": {
+                "city": "Tokyo",
+                "state": "",
+                "country": "Japan"
+            },
+            "avatar": "ImagesArray[8]",
+            "followed": false
+        },
+        {
+            "id": 10,
+            "firstName": "Lamberta",
+            "lastName": "Brianha",
+            "location": {
+                "city": "Rio de Janeiro",
+                "state": "",
+                "country": "Brazil"
+            },
+            "avatar": "ImagesArray[9]",
+            "followed": true
+        },
+        {
+            "id": 11,
+            "firstName": "Rocky",
+            "lastName": "",
+            "location": {
+                "city": "Chicago",
+                "state": "Illinois",
+                "country": "USA"
+            },
+            "avatar": "ImagesArray[10]",
+            "followed": true
+        },
+        {
+            "id": 12,
+            "firstName": "Lil",
+            "lastName": "Titt",
+            "location": {
+                "city": "Atlanta",
+                "state": "Georgia",
+                "country": "USA"
+            },
+            "avatar": "ImagesArray[11]",
+            "followed": false
+        },
+        {
+            "id": 13,
+            "firstName": "Rooster",
+            "lastName": "Dakota",
+            "location": {
+                "city": "Phoenix",
+                "state": "Arizona",
+                "country": "USA"
+            },
+            "avatar": "ImagesArray[12]",
+            "followed": true
+        },
+        {
+            "id": 14,
+            "firstName": "Cody L",
+            "lastName": "Johnson",
+            "location": {
+                "city": "San Antonio",
+                "state": "Texas",
+                "country": "USA"
+            },
+            "avatar": "ImagesArray[13]",
+            "followed": true
+        },
+        {
+            "id": 15,
+            "firstName": "Mister",
+            "lastName": "Twister",
+            "location": {
+                "city": "Mexico city",
+                "state": "",
+                "country": "Mexico"
+            },
+            "avatar": "ImagesArray[14]",
+            "followed": false
+        },
+        {
+            "id": 16,
+            "firstName": "Leopold",
+            "lastName": "Truth",
+            "location": {
+                "city": "Cancún",
+                "state": "Quintana Roo",
+                "country": "Mexico"
+            },
+            "avatar": "ImagesArray[15]",
+            "followed": true
+        },
+        {
+            "id": 18,
+            "firstName": "Artem",
+            "lastName": "Prodan",
+            "location": {
+                "city": "Kryvyy Rih",
+                "state": "Dnipropetrovska",
+                "country": "Ukraine"
+            },
+            "avatar": "ImagesArray[16]",
+            "followed": true
+        },
+        {
+            "id": 19,
+            "firstName": "Your",
+            "lastName": "Shark",
+            "location": {
+                "city": "Kryvyy Rih",
+                "state": "Dnipropetrovska",
+                "country": "Ukraine"
+            },
+            "avatar": "ImagesArray[17]",
+            "followed": true
+        }
+    ]
+}
