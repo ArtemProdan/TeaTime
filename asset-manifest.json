@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TeaTime/static/css/main.ab7f6b46.css",
-    "main.js": "/TeaTime/static/js/main.d487786e.js",
+    "main.js": "/TeaTime/static/js/main.db476ada.js",
     "static/media/17.jpeg": "/TeaTime/static/media/17.1fa1a51b56d104e21dc0.jpeg",
     "static/media/telegram-chats2.jpg": "/TeaTime/static/media/telegram-chats2.a49fba9bd451a7886f7b.jpg",
     "static/media/telegram-chats.jpg": "/TeaTime/static/media/telegram-chats.8a72b362824f54531ab4.jpg",
@@ -46,10 +46,10 @@
     "static/media/messages.svg": "/TeaTime/static/media/messages.805cb87f369c4e873135293a96d30e56.svg",
     "static/media/logout.svg": "/TeaTime/static/media/logout.f882801a1c4b472e5f5666b43be105d0.svg",
     "main.ab7f6b46.css.map": "/TeaTime/static/css/main.ab7f6b46.css.map",
-    "main.d487786e.js.map": "/TeaTime/static/js/main.d487786e.js.map"
+    "main.db476ada.js.map": "/TeaTime/static/js/main.db476ada.js.map"
   },
   "entrypoints": [
     "static/css/main.ab7f6b46.css",
-    "static/js/main.d487786e.js"
+    "static/js/main.db476ada.js"
   ]
 }
