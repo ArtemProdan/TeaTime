@@ -1,4 +1,4 @@
-import Chat from '../ChatGPT/ChatGPT';
+// import Chat from '../ChatGPT/ChatGPT';
 import './leftbar.css'
 // import { useMatchMedia } from "../../hooks";
 // import { Weather } from './Weather';
@@ -13,7 +13,7 @@ export const LeftBar = () => {
   return (
     <div className="l">
       <WeatherWidget />
-      <Chat />
+      {/* <Chat /> */}
       {/* <Weather/> */}
 
       {/* <h1>Hello CodeSandbox</h1> */}
@@ -24,6 +24,8 @@ export const LeftBar = () => {
       <h1 className='leftBarH1'>Пофиксить Логаут</h1>
       <h1 className='leftBarH1'>React Suspense & Lazy</h1>
       <h1 className='leftBarH1'>Галерея загрузка</h1>
+      <h1 className='leftBarH1'>Network error для Users</h1>
+      <h1 className='leftBarH1'>Ошибка для пользователей без статуса</h1>
       <Counter />
     </div>
   );

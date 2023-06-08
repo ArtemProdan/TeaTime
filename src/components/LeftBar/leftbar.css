@@ -3,6 +3,7 @@
     background-color: rgba(206, 135, 41, 0);
     color: #858585;
     overflow: auto;
+    max-height: 90vh;
 }
 
 .l::-webkit-scrollbar {
@@ -21,7 +22,7 @@
 .leftBarH1 {
     font-size: 24px;
     color: white;
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: rgb(85, 135, 226);
     padding: 20px 30px;
     border-radius: 10px;

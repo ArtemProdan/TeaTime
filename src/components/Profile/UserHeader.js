@@ -19,13 +19,13 @@ export class UserHeader extends React.Component {
                 <div className={s.information}>
                     <img
                         src={
-                            profile.photos !== undefined
-                                ? profile.photos.large ?? UserDefault
-                                : UserDefault
+                            // profile.photos !== undefined ? profile.photos.large ?? UserDefault : UserDefault
+                            (profile.photos !== undefined && profile.photos.large) || UserDefault
                         }
                         className={s.avatar}
                         alt="proff"
                     />
+                    <input type="file" id='photo'/>
                     <div className="profile_container">
                         <h1 className={s.name}>{profile.fullName}</h1>
                         <h1 className={s.name}>{profile.userId}</h1>
