@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import networkError from '../../../img/networkError.webp'
 
 const AuthError = (props) => {
   const [count, setCount] = useState(5);
@@ -21,6 +22,7 @@ const AuthError = (props) => {
 
   return (
     <div className="error">
+      <img src={networkError} alt="error pic" />
       {props.authError}
       <h1>Перезагрузка через: {count} сек.</h1>
     </div>
