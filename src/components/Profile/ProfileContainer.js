@@ -10,21 +10,26 @@ import { withAuthRedirect } from '../../HOC/withAuthRedirect'
 import { compose } from 'redux'
 // import { Navigate } from 'react-router-dom'
 
-class ProfileContainer extends React.Component {
-    componentDidMount() {
+class ProfileContainer extends React.PureComponent {
+
+    refreshProfile() {
         let userId = this.props.userId['*'];
-
-        if (!userId) {
-            userId = this.props.myId;
-        }
-
-        console.log('Вызван ProfileContainer')
-
+        if (!userId) { userId = this.props.myId }
         this.props.getUserProfileThunk(userId)
         this.props.getStatus(userId)
     }
 
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.userId !== prevProps.userId)
+        this.refreshProfile()
+    }
+
     render(props) {
+        console.log('Вызван Profile Container')
         // if (!this.props.isAuth) { return <Navigate to="/login" /> }
         return (
             <div className={s.user_page}>
