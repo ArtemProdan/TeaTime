@@ -4,7 +4,8 @@ import avatar from '../components/Gallery/Gallery_pics/1.jpg'
 const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
-    headers: { 'API-KEY': '54398fa5-7a70-4d56-b172-361948f7ccb0' },
+    // headers: { 'API-KEY': '54398fa5-7a70-4d56-b172-361948f7ccb0' },
+    headers: { 'API-KEY': '5dac72e7-95e4-45f1-9e1b-e055e4330068' },
     email: 'maxivanov312@gmail.com',
     password: 'socialnetworksamuraijs1234567890',
 })

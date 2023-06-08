@@ -12,8 +12,8 @@ export const LeftBar = () => {
 
   return (
     <div className="l">
-      <WeatherWidget/>
-      <Chat/>
+      <WeatherWidget />
+      <Chat />
       {/* <Weather/> */}
 
       {/* <h1>Hello CodeSandbox</h1> */}
@@ -21,9 +21,10 @@ export const LeftBar = () => {
       {isTablet && <h2>Hello from tablet</h2>}
       {isDesktop && <h2>Hello from desktop</h2>} */}
       <h1 className='leftBarH1'>Новый билд 4</h1>
-      <h1 className='leftBarH1'>Создан комит 2</h1>
-      <h1 className='leftBarH1'>Нужно заняться формами</h1>
-      <Counter/>
+      <h1 className='leftBarH1'>Пофиксить Логаут</h1>
+      <h1 className='leftBarH1'>React Suspense & Lazy</h1>
+      <h1 className='leftBarH1'>Галерея загрузка</h1>
+      <Counter />
     </div>
   );
 }
