@@ -11,7 +11,13 @@ export class UserHeader extends React.Component {
     }
     
     render() {
-        const { profile, status, updateStatus } = this.props;
+        const { profile, status, updateStatus, isOwner, savePhoto } = this.props;
+
+        const onMainPhotoSelected = (e) => { 
+            if (e.target.files.length) {
+                savePhoto(e.target.files[0])
+            }
+        }
 
         return (
             <div className={s.users_header}>
@@ -25,7 +31,8 @@ export class UserHeader extends React.Component {
                         className={s.avatar}
                         alt="proff"
                     />
-                    <input type="file" id='photo'/>
+                    { isOwner && <input type="file" id='photo' onChange={onMainPhotoSelected}/> }
+
                     <div className="profile_container">
                         <h1 className={s.name}>{profile.fullName}</h1>
                         <h1 className={s.name}>{profile.userId}</h1>

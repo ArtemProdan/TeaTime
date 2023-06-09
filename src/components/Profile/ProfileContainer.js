@@ -8,9 +8,12 @@ import { useParams } from 'react-router-dom'
 import s from './Profile.module.css'
 import { withAuthRedirect } from '../../HOC/withAuthRedirect'
 import { compose } from 'redux'
-// import { Navigate } from 'react-router-dom'
+import { savePhoto } from '../../redux/profiles-reducer'
 
 class ProfileContainer extends React.PureComponent {
+    // state ={
+    //     isOwner : false
+    // }
 
     refreshProfile() {
         let userId = this.props.userId['*'];
@@ -25,15 +28,21 @@ class ProfileContainer extends React.PureComponent {
 
     componentDidUpdate(prevProps, prevState) {
         if (this.props.userId !== prevProps.userId)
-        this.refreshProfile()
+            this.refreshProfile()
     }
 
     render(props) {
-        console.log('Вызван Profile Container')
-        // if (!this.props.isAuth) { return <Navigate to="/login" /> }
+        // console.log('Вызван Profile Container')
         return (
             <div className={s.user_page}>
-                <UserHeader {...this.props} profile={this.props.profile} updateStatus={this.props.updateStatus} status={this.props.status} />
+                <UserHeader
+                    {...this.props}
+                    isOwner = {!this.props.userId['*']}
+                    profile={this.props.profile}
+                    updateStatus={this.props.updateStatus}
+                    status={this.props.status}
+                    savePhoto={this.props.savePhoto}
+                />
                 <MyPostsContainer />
             </div>
         )
@@ -53,7 +62,7 @@ const AuthRedirectComponent = (props) => {
 };
 
 export default compose(
-    connect(mapStateToProps, { getUserProfileThunk, getStatus, updateStatus }),
+    connect(mapStateToProps, { getUserProfileThunk, getStatus, updateStatus, savePhoto }),
     withAuthRedirect)
     (AuthRedirectComponent)
 /*
