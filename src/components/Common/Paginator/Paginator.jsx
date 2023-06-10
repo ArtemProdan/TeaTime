@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from "./Paginator.module.css";
 import cn from "classnames";
+import next from '../../../icons/next.svg'
 
-let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
+let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10 }) => {
 
     let pagesCount = Math.ceil(totalItemsCount / pageSize);
 
@@ -18,22 +19,26 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portion
 
 
     return <div className={styles.paginator}>
-        { portionNumber > 1 &&
-        <button onClick={() => { setPortionNumber(portionNumber - 1) }}>PREV</button> }
+        {portionNumber > 1 &&
+            <button className={styles.btn_prev} onClick={() => { setPortionNumber(portionNumber - 1);  onPageChanged(rightPortionPageNumber - portionSize) }}>
+                <img src={next} alt="" />
+            </button>}
 
-            {pages
-                .filter(p => p >= leftPortionPageNumber && p<=rightPortionPageNumber)
-                .map((p) => {
-                return <span className={ cn({
+        {pages
+            .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
+            .map((p) => {
+                return <span className={cn({
                     [styles.selectedPage]: currentPage === p
-                }, styles.pageNumber) }
-                             key={p}
-                             onClick={(e) => {
-                                 onPageChanged(p);
-                             }}>{p}</span>
+                }, styles.pageNumber)}
+                    key={p}
+                    onClick={(e) => {
+                        onPageChanged(p);
+                    }}>{p}</span>
             })}
-        { portionCount > portionNumber &&
-            <button onClick={() => { setPortionNumber(portionNumber + 1) }}>NEXT</button> }
+        {portionCount > portionNumber &&
+            <button onClick={() => { setPortionNumber(portionNumber + 1); onPageChanged(leftPortionPageNumber + portionSize) }}>
+                <img src={next} alt="" />
+            </button>}
 
 
     </div>

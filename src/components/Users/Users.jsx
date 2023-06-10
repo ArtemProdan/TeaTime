@@ -2,13 +2,16 @@ import React from 'react';
 import s from './users.module.css';
 import userDefault from '../../img/user_default.png';
 import { NavLink } from 'react-router-dom';
-import { Filter } from './Filter';
+// import { Filter } from './Filter';
+// import Paginator from '../Common/Paginator/Paginator';
 
 export const Users = React.memo(props => {
+    // const { currentPage, onPageChanged, usersTotalCount, usersOnOnePage } = props
 
     return (
         <div className={s.users_wrapper}>
-            <Filter />
+            {/* <Filter /> */}
+            {/* <Paginator currentPage={currentPage} onPageChanged={onPageChanged} totalItemsCount={usersTotalCount} pageSize={usersOnOnePage} /> */}
 
             <div className={s.users}>
                 {props.users &&

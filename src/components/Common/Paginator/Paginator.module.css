@@ -1,12 +1,38 @@
 .paginator {
-    margin: 10px;
+    margin: 0 0 15px 0;
 }
 .pageNumber {
     padding: 2px;
-    border: 1px solid grey;
+    margin-right: 20px;
+    font-size: 18px;
 }
 
 .pageNumber.selectedPage {
     font-weight: bold;
-    border-color: black;
+    color: white;
+    font-size: 22px;
+    border-color: rgb(180, 3, 3);
+    /* margin-top: 100px; */
+    transform: translateY(-100px);
+    padding-top: 20px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    transform: translateY(25%);
+    /* margin-top: -80%; */
+}
+
+button img {
+    width: 20px;
+    filter: brightness(0.5);
+}
+
+.btn_prev {
+    margin-right: 20px;
+}
+
+.btn_prev img {
+    transform: rotate(180deg);
 }

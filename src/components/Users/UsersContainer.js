@@ -27,20 +27,16 @@ class UsersContainer extends React.Component {
 
     render() {
         // if (!this.props.isAuth) {return <Navigate to='/login'/>}
-        const { currentPage, onPageChanged, usersTotalCount, usersOnOnePage } = this.props
+        const { currentPage, usersTotalCount, usersOnOnePage } = this.props
 
         return <>
             {this.props.isFetching ? <Preloader /> : null}
-            <Paginator currentPage={currentPage} onPageChanged={onPageChanged} totalItemsCount={usersTotalCount} pageSize={usersOnOnePage} />
+            <Paginator currentPage={currentPage} onPageChanged={this.onPageChanged} totalItemsCount={usersTotalCount} pageSize={usersOnOnePage} />
             <Users usersTotalCount={this.props.usersTotalCount}
-                usersOnOnePage={this.props.usersOnOnePage}
-                currentPage={this.props.currentPage}
-                onPageChanged={this.onPageChanged}
                 users={this.props.users}
                 follow={this.props.followThunk}
                 unfollow={this.props.unfollowThunk}
                 followingInProgress={this.props.followingInProgress}
-            // totalPagesCount={this.props.totalPagesCount}
             />
         </>
     }
