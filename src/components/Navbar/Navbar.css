@@ -16,7 +16,9 @@
     padding-left: 35px;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
+    gap: 20px;
     z-index: 1;
+    align-items: center;
 }
 
 .nav a:hover {
@@ -30,6 +32,11 @@
     left: -10px;
     top: -2px;
 }
+
+.nav a svg {
+    font-size: 28px;
+}
+
 
 /* .nav__tab {
     flex: 0 1 20%;
@@ -54,7 +61,7 @@
     width: 100%;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 480px) {
     .nav {
         display: flex;
         flex-direction: row;
@@ -69,4 +76,16 @@
         margin-bottom: 90px;
     }
     
+}
+
+@media screen and (max-width: 980px) {
+    .nav {
+        margin-right: 30px;
+    }
+    .nav a p  {
+        display: none;
+    }
+    /* .nav__item {
+        margin-bottom: 90px;
+    } */
 }

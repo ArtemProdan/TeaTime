@@ -1,13 +1,17 @@
 import './Navbar.css'
 import { NavLink } from 'react-router-dom'
-import Gallery from '../../icons/gallery.svg'
-import Groups from '../../icons/groups.svg'
-import Messages from '../../icons/messages.svg'
-import Music from '../../icons/music.svg'
-import News from '../../icons/news.svg'
-import ProfileIcon from '../../icons/profile.svg'
-import catIcon from '../../icons/catSVG.svg'
-import shestil from '../../icons/tea.svg'
+// import Gallery from '../../icons/gallery.svg'
+// import Groups from '../../icons/groups.svg'
+// import Messages from '../../icons/messages.svg'
+// import Music from '../../icons/music.svg'
+// import News from '../../icons/news.svg'
+// import ProfileIcon from '../../icons/profile.svg'
+// import catIcon from '../../icons/catSVG.svg'
+// import shestil from '../../icons/tea.svg'
+import { FaUserAlt, FaRegComments, FaMusic, FaRegNewspaper, FaUsers, FaImages, FaCat } from 'react-icons/fa';
+import { GiTeapotLeaves } from 'react-icons/gi';
+
+
 
 
 export const Navbar = () => {
@@ -19,11 +23,16 @@ export const Navbar = () => {
     };
     // let activeClassName = 'active';
 
+    // const Icons = {
+    //     ProfileIcon: <FaUserAlt />,
+    // };
+
     let NavItem = (props) => {
         return (
             <div className='nav__item'>
                 <NavLink to={props.to} style={({ isActive }) => isActive ? activeStyle : undefined}>
-                    <img src={props.src} alt="" />
+                    {/* <img src={props.src} alt="" /> */}
+                    {props.src}
                     <p> {props.name} </p>
                 </NavLink>
             </div>
@@ -32,14 +41,14 @@ export const Navbar = () => {
 
     return (
         <nav className="nav">
-            <NavItem to='/profile' src={ProfileIcon} name='Profile' />
-            <NavItem to='/dialogs' src={Messages} name='Messages' />
-            <NavItem to='/music' src={Music} name='Music' />
-            <NavItem to='/news' src={News} name='News' />
-            <NavItem to='/users' src={Groups} name='Users' />
-            <NavItem to='/gallery' src={Gallery} name='Gallery' />
-            <NavItem to='/groups' src={catIcon} name='Cat' />
-            <NavItem to='/shestil' src={shestil} name='Shestil' />
+            <NavItem to='/profile' src={<FaUserAlt />} name='Profile' />
+            <NavItem to='/dialogs' src={<FaRegComments />} name='Messages' />
+            <NavItem to='/music' src={<FaMusic />} name='Music' />
+            <NavItem to='/news' src={<FaRegNewspaper />} name='News' />
+            <NavItem to='/users' src={<FaUsers />} name='Users' />
+            <NavItem to='/gallery' src={<FaImages />} name='Gallery' />
+            <NavItem to='/groups' src={<FaCat />} name='Cat' />
+            <NavItem to='/shestil' src={<GiTeapotLeaves />} name='Shestil' />
         </nav>
 
     )

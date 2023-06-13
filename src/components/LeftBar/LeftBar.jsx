@@ -20,12 +20,9 @@ export const LeftBar = () => {
       {/* {isMobile && <h2>Hello from mobile</h2>}
       {isTablet && <h2>Hello from tablet</h2>}
       {isDesktop && <h2>Hello from desktop</h2>} */}
-      <h1 className='leftBarH1'>Новый билд 4</h1>
-      <h1 className='leftBarH1'>Пофиксить Логаут</h1>
       <h1 className='leftBarH1'>React Suspense & Lazy</h1>
       <h1 className='leftBarH1'>Галерея загрузка</h1>
       <h1 className='leftBarH1'>Network error для Users</h1>
-      <h1 className='leftBarH1'>Ошибка для пользователей без статуса</h1>
       <Counter />
     </div>
   );

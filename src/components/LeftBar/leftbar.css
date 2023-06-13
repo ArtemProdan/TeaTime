@@ -1,6 +1,6 @@
 .l {
     padding: 0px 10px;
-    background-color: rgba(206, 135, 41, 0);
+    background-color: rgba(206, 135, 41, 0.37);
     color: #858585;
     overflow: auto;
     max-height: 90vh;
@@ -20,6 +20,7 @@
 }
 
 .leftBarH1 {
+    width: 80%;
     font-size: 24px;
     color: white;
     margin-top: 30px;

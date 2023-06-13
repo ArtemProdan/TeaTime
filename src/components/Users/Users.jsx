@@ -6,13 +6,10 @@ import { NavLink } from 'react-router-dom';
 // import Paginator from '../Common/Paginator/Paginator';
 
 export const Users = React.memo(props => {
-    // const { currentPage, onPageChanged, usersTotalCount, usersOnOnePage } = props
 
     return (
         <div className={s.users_wrapper}>
-            {/* <Filter /> */}
-            {/* <Paginator currentPage={currentPage} onPageChanged={onPageChanged} totalItemsCount={usersTotalCount} pageSize={usersOnOnePage} /> */}
-
+           
             <div className={s.users}>
                 {props.users &&
                     props.users.map((u) => (
@@ -22,7 +19,8 @@ export const Users = React.memo(props => {
                             </NavLink>
 
                             <div className={s.follow_btn}>
-                                {u.followed ? (
+                            {u.id !== props.myId ? (
+                                u.followed ? (
                                     <button
                                         disabled={props.followingInProgress.some((id) => id === u.id)}
                                         className={s.btn_unfollow}
@@ -42,7 +40,7 @@ export const Users = React.memo(props => {
                                     >
                                         Follow
                                     </button>
-                                )}
+                            )) : <h2>😉 it's me</h2> }
                             </div>
 
                             <pre>

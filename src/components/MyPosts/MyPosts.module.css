@@ -1,15 +1,11 @@
 .wrapper {
-    /* background-color: var(--color-2); */
     background-color: var(--color-1);
-    /* padding: 40px; */
-    /* border: 1px solid var(--color-2); */
     border-radius: 10px;
-    /* margin-top: 15px; */
-    /* box-shadow: 0px 10px 20px rgb(0, 0, 0); */
     position: relative;
-    /* margin-bottom: 60px; */
     display: flex;
     flex-direction: column;
+    padding: 0 30px;
+    width: 100%;
 }
 
 textarea {
@@ -61,10 +57,10 @@ textarea {
 .open_post_area {
     height: 50px;
     align-self: flex-end;
-    background-color: transparent;
+    background-color: rgba(255, 0, 0, 0);
     border: none;
     display: flex;
-    margin: -20px -20px 20px 0;
+    /* margin: -20px -20px 20px 0; */
     transition: all 0.3s ease;
     transform: scaleY(1);
 

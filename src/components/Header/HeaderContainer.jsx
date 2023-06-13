@@ -12,7 +12,10 @@ import {logOut } from "../../redux/auth-reducer";
 
 const mapStateToProps = (state) => ({
     isAuth : state.auth.isAuth,
-    login : state.auth.login
+    login : state.auth.login,
+    profile : state.profilesData.profile,
+    myProfile : state.auth.myProfile,
+    myId : state.auth.userId
  })
 
  export default connect(mapStateToProps, {logOut})(HeaderContainer)

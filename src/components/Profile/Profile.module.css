@@ -1,11 +1,9 @@
 /* *****************profile**************** */
 .user_page {
-  /* height: 4000px; */
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-Y: auto;
   transition: all 0.3s ease;
-  ;
 }
 
 .user_page::-webkit-scrollbar {
@@ -25,16 +23,17 @@
   border-radius: 10px;
   width: 100%;
   background-color: var(--profile);
-  height: 400px;
+  /* height: 50%; */
   gap: 0;
   animation: onload 0.3s linear 1;
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 780px) {
+/* @media screen and (max-width: 780px) {
   .users_header {
     display: none;
   }
-}
+} */
 
 @keyframes onload {
   0% {
@@ -65,19 +64,28 @@
 .information {
   display: flex;
   background-color: var(--profile);
-  height: 200px;
+  min-height: 200px;
   margin-top: -4px;
   transition: all 0.3s ease;
   border-radius: 10px;
 }
 
- h4 {
+.info_item {
+  display: flex;
+  align-items: flex-end;
+}
+
+.info_item p {
+  white-space: nowrap;
+}
+
+h4 {
   /* font-size: 40px; */
   color: #a7a7a7;
   font-style: italic;
   font-size: 15px;
   font-weight: normal;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .avatar {
@@ -155,6 +163,7 @@
 .user_page.scrolled .name {
   margin-top: -0.5%;
 }
+
 /* ***************************************Status************************************ */
 .status {
   display: flex;

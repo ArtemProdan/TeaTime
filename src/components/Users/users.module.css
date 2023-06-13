@@ -9,9 +9,9 @@
     max-width: 100%;
     padding: 20px 0;
     display: grid;
-    grid-template-rows: 40px 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 0.2fr;
-    grid-template-areas: "pa pa" "u f";
+    grid-template-areas: "u f";
     transform: translateX(1px);
 }
 
@@ -26,14 +26,10 @@
 }
 
 .user_item {
-    /* background-color: rgb(48, 48, 48); */
     padding: 10px;
     align-items: center;
     gap: 20px;
     margin-bottom: 0px;
-    /* border-radius: 15px; */
-    /* border: 1px solid rgb(109, 109, 109); */
-    /* max-width: 900px; */
     width: auto;
     flex: 0 0 300px;
     display: grid;
@@ -42,7 +38,6 @@
     grid-template-rows: 70px;
     grid-column-gap: 10px;
     align-items: center;
-
 }
 
 .user_item img {
@@ -63,16 +58,14 @@
 .user_item pre {
     grid-area: p;
     padding: 0 20px;
-    /* background-color: var(--color-8); */
     height: 90%;
     width: 95%;
     color: var(--color-8);
     border-bottom: 1px solid rgba(0, 0, 0, 0.397);
-    /* border-radius: 15px; */
     max-width: 1000px;
     display: flex;
     flex-direction: column;
-    /* margin-top: -3%; */
+    text-align: left;
     margin-left: 10px;
     overflow: hidden;
     /* скрыть все, что выходит за границы блока */
@@ -97,17 +90,28 @@
 
 .follow_btn button {
     grid-area: b;
-    /* background-color: cornflowerblue; */
+    display: flex;
+   margin-top: 50%;
+   transform: translateY(-60%);
     background-color: rgba(100, 148, 237, 0);
-    /* color: var(--color-8); */
     font-weight: bold;
     padding: 18px 10px;
     /* border: 1px solid rgb(109, 109, 109); */
-    border: none;
+    /* border: none; */
     border-radius: 15px;
     height: 90%;
     text-align: center;
     font-size: 18px;
+}
+
+.follow_btn h2 {
+    display: flex;
+    white-space: nowrap;
+    /* justify-items: center; */
+    text-align: center;
+    margin: 50% 0 0 -30%;
+    transform: translateX(-100%);
+    transform: translateY(-90%);
 }
 
 .btn_unfollow {
@@ -117,36 +121,6 @@
 .btn_follow {
     color: rgb(126, 186, 255);
 }
-
-.pages {
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 auto;
-
-    color: var(--color-3);
-    font-size: 24px;
-    gap: 20px;
-    /* max-width: 700px; */
-    /* overflow: hidden; */
-    /* скрыть все, что выходит за границы блока */
-    /* overflow-x: scroll; */
-    /* text-overflow: ellipsis; */
-    /* обрезать текст и добавить многоточие в конце */
-    /* white-space: nowrap; */
-    /* запретить перенос строк */
-    grid-area: pa;
-}
-
-.pages span:hover {
-    color: gray;
-}
-
-.selectedPage {
-    font-weight: bold;
-    color: rgb(141, 31, 31);
-}
-
-
 
 .filter {
     display: flex;

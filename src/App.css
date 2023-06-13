@@ -193,17 +193,27 @@ body::-webkit-scrollbar-track {
 @media screen and (max-width: 780px) {
   .App {
     grid-template-columns: 1fr;
+    grid-template-areas:
+    "h h h"
+    "n c r";
+  grid-template-columns: 0.3fr 3fr 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  text-align: center;  
+  }
+  /* .content {
+    overflow: hidden;
+  } */
+}
+@media screen and (max-width: 480px) {
+  .App {
+    grid-template-columns: 80px 1fr;
     grid-template-rows: 0.25fr 1fr 0.25fr;
     grid-template-areas:
     "h"
     "c"
     "n";
-  }
-  .content {
-    overflow: hidden;
-  }
-  .r {
-    display: none;
   }
 }
 
