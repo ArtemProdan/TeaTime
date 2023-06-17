@@ -1,24 +1,5 @@
-// import {ImagesArray} from '../../redux/profile_avatars'
+import { Formik, Field, Form } from "formik";
 import './gallery.css'
-//686d0b51-1632-4bae-8685-8230d2986c49:36297877-65da-490a-86bf-c4aea1890948
-
-// import axios from 'axios';
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://api.browse.ai/v2/robots',
-//   headers: {
-//     Authorization: 'Bearer 686d0b51-1632-4bae-8685-8230d2986c49:36297877-65da-490a-86bf-c4aea1890948'
-//   }
-// };
-
-// axios.request(options)
-//   .then(function (response) {
-//     console.log(response.data);
-//   })
-//   .catch(function (error) {
-//     console.error(error);
-//   });
 
 let PornImages = [
     {
@@ -48,7 +29,6 @@ const GalleryItem = (props) => {
     )
 }
 
-// let GalleryList = ImagesArray.map(img => <GalleryItem src={img} key={++key} />)
 let GalleryList = PornImages.map(img => <GalleryItem src={img.url} id={img.id} key={img.id}/>)
 
 export const Gallery = () => {
@@ -57,6 +37,26 @@ export const Gallery = () => {
             <div className="gallery__wrapper">
                 {GalleryList}
             </div>
+
+            <div>
+            <h1>Авторизоваться</h1>
+            <Formik
+                initialValues={{ password: '', email: "" }}
+                onSubmit={async (values) => {
+                    
+                    alert(JSON.stringify(values));
+
+                }}
+            >
+                {({ errors, touched}) => (
+                    <Form>
+                        <Field name="email" type="text" />
+                        <Field name="password" type="text" />
+                        <button type="submit">Submit</button>
+                    </Form>
+                )}
+            </Formik>
+        </div>
         </div>
     )
 }

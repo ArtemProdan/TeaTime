@@ -169,14 +169,22 @@ export const updateStatus = (status) => (dispatch) => {
         })
 }
 
-export const savePhoto = (file) => (dispatch) => {
-            // debugger
-            profileAPI.savePhoto(file)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(savePhotoSucces(response.data.data.photos))
-            }
-        })
+export const savePhoto = (file) => async (dispatch) => {
+    const response = await profileAPI.savePhoto(file)
+    if (response.data.resultCode === 0) {
+        dispatch(savePhotoSucces(response.data.data.photos))
+    }
+}
+
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userId = getState().auth.userId
+    const response = await profileAPI.saveProfile(profile)
+    if (response.data.resultCode === 0) {
+        dispatch(getUserProfileThunk(userId))
+        console.log(response)
+    } else {
+        
+    }
 }
 
 export default profilesReducer

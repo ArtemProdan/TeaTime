@@ -2,13 +2,12 @@ import React from 'react'
 import { UserHeader } from "./UserHeader"
 import MyPostsContainer from '../MyPosts/MyPostsContainer'
 import { connect } from "react-redux"
-import { getUserProfileThunk, getStatus, updateStatus } from "../../redux/profiles-reducer"
+import { getUserProfileThunk, getStatus, updateStatus, savePhoto, saveProfile } from "../../redux/profiles-reducer"
 import { getProfile, isAuth, myId } from '../../redux/users-selectors'
 import { useParams } from 'react-router-dom'
 import s from './Profile.module.css'
 import { withAuthRedirect } from '../../HOC/withAuthRedirect'
 import { compose } from 'redux'
-import { savePhoto } from '../../redux/profiles-reducer'
 
 class ProfileContainer extends React.PureComponent {
     // state ={
@@ -42,6 +41,7 @@ class ProfileContainer extends React.PureComponent {
                     updateStatus={this.props.updateStatus}
                     status={this.props.status}
                     savePhoto={this.props.savePhoto}
+                    saveProfile={this.props.saveProfile}
                 />
                 <MyPostsContainer />
             </div>
@@ -62,7 +62,7 @@ const AuthRedirectComponent = (props) => {
 };
 
 export default compose(
-    connect(mapStateToProps, { getUserProfileThunk, getStatus, updateStatus, savePhoto }),
+    connect(mapStateToProps, { getUserProfileThunk, getStatus, updateStatus, savePhoto, saveProfile }),
     withAuthRedirect)
     (AuthRedirectComponent)
 /*

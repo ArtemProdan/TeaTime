@@ -1,91 +1,64 @@
-import React from 'react';
+import React, { useState, memo } from 'react';
 import s from './Profile.module.css';
 import profileBg from '../../img/telegram-chats.jpg';
 import UserDefault from '../../img/user_default.png';
 import { Status } from './Status';
-import { FaFacebook, FaInstagram, FaGithub, FaVk, FaTwitter, FaUserAlt, FaGlobe, FaYoutube } from 'react-icons/fa';
+import { ProfileInfo } from './ProfileInfo';
+import { ProfileInfoForm } from './ProfileInfoForm';
+import camera from '../../icons/camera.svg'
 
-export class UserHeader extends React.PureComponent {
+export const UserHeader = memo(props => {
 
-    render() {
-        const { profile, status, updateStatus, isOwner, savePhoto } = this.props;
+    const { profile, status, updateStatus, isOwner, savePhoto, saveProfile } = props
 
-        const onMainPhotoSelected = (e) => {
-            if (e.target.files.length) {
-                savePhoto(e.target.files[0])
-            }
+    let [editMode, setEditMode] = useState(false);
+
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0])
         }
+    }
 
-        const socialIcons = {
-            facebook: <FaFacebook />,
-            instagram: <FaInstagram />,
-            github: <FaGithub/>,
-            vk : <FaVk/>, 
-            twitter: <FaTwitter/>,
-            mainlink: <FaUserAlt/>, 
-            website: <FaGlobe />,
-            youtube: <FaYoutube />
-        };
-        
+    console.log('RENDER USER HEADER')
+    return (
+        <div className={s.users_header}>
+            <img className={s.background} src={profileBg} alt="background" />
+            <div className={s.profile}>
 
-        const ContactItem = ({ title, value }) => {
-            return value ? (
-                <div className={s.info_item}>
-                    {socialIcons[title.toLowerCase()]}
-                    <p>{title}</p>
-                    <h4>{value}</h4>
-                </div>
-            ) : null;
-        };
+                <img
+                    src={(profile.photos !== undefined && profile.photos.large) || UserDefault}
+                    className={s.avatar}
+                    alt="avatar"
+                />
+                {isOwner &&
+                    <div className={s.btn_file_div}>
+                        <img src={camera} alt="" />
+                        <input type="file" id='photo' onChange={onMainPhotoSelected} className={s.btn_file} />
+                    </div>
+                }
+                {isOwner &&
+                    <button onClick={() => setEditMode(!editMode)}>Edit info</button>
+                }
 
-        console.log('RENDER USER HEADER')
-        return (
-            <div className={s.users_header}>
-                <img className={s.profile_bg} src={profileBg} alt="" />
-                <div className={s.information}>
-                    <img
-                        src={(profile.photos !== undefined && profile.photos.large) || UserDefault}
-                        className={s.avatar}
-                        alt="profile"
-                    />
-                    {isOwner && <input type="file" id='photo' onChange={onMainPhotoSelected} />}
+                <div className="profile_info">
+                    <h1 className={s.name}>{profile.fullName}</h1>
 
-                    <div className="profile_container">
-                        <h1 className={s.name}>{profile.fullName}</h1>
+                    {status && <Status status={status} updateStatus={updateStatus} />}
 
-                        {status && <Status status={status} updateStatus={updateStatus} />}
+                    {isOwner && editMode ? (
+                        <ProfileInfoForm profile={profile} saveProfile={saveProfile} setEditMode={setEditMode}/>
+                    ) : (
+                        <ProfileInfo profile={profile} />
+                    )}
 
-                        {profile.aboutMe &&
-                            <div className={s.info_item}>
-                                <p>Обо мне</p>
-                                <h4>{profile.aboutMe}</h4>
-                            </div>
-                        }
-
-                        <div>
-                            <b>Контакты</b>:
-                            {profile && profile.contacts && Object.keys(profile.contacts).map(key => {
-                                return <ContactItem key={key} title={key} value={profile.contacts[key]} />
-                            })}
-                        </div>
-
-                        {
-                            profile.lookingForAJob && profile.lookingForAJobDescription &&
-                            <div className={s.info_item}>
-                                <p>Ищу работу :</p>
-                                <h4> {profile.lookingForAJobDescription} </h4>
-                            </div>
-                        }
-
-
+                    {!isOwner &&
                         <div className={s.following}>
                             <button>Follow</button>
                             <button>Unfollow</button>
                         </div>
-
-                    </div>
+                    }
                 </div>
             </div>
-        );
-    }
-}
+        </div>
+    );
+})

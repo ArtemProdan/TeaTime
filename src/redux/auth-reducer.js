@@ -38,7 +38,6 @@ const setMyProfile = (profile) => ({ type: SET_MY_PROFILE, myProfile: profile })
 export const getMyProfile = (userId) => (dispatch) => {
     profileAPI.getUserProfile(userId).then(response => {
         dispatch(setMyProfile(response.data));
-        console.log(response.data);
     });
 };
 
