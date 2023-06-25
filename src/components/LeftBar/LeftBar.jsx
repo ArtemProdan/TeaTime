@@ -21,6 +21,7 @@ export const LeftBar = () => {
       {isTablet && <h2>Hello from tablet</h2>}
       {isDesktop && <h2>Hello from desktop</h2>} */}
       <h1 className='leftBarH1'>React Suspense & Lazy</h1>
+      <h1 className='leftBarH1'>Валидация форм для Contacts</h1>
       <h1 className='leftBarH1'>Галерея загрузка</h1>
       <h1 className='leftBarH1'>Network error для Users</h1>
       <Counter />

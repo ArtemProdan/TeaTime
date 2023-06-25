@@ -18,10 +18,12 @@ export const ProfileInfo = (props) => {
 
     const ContactItem = ({ title, value }) => {
         return value ? (
-            <div className={s.info_item}>
+            <div className={s.form_info_item}>
                 {socialIcons[title.toLowerCase()]}
                 <p>{title}</p>
-                <h4>{value}</h4>
+                <a href={value} target="_blank" rel="noopener noreferrer">
+                    <h4>{value}</h4>
+                </a>
             </div>
         ) : null;
     };
@@ -44,7 +46,7 @@ export const ProfileInfo = (props) => {
             }
 
             <div>
-            {Array.isArray(profile?.contacts) && profile.contacts.some(value => value !== null) && <div>Контакты:</div>}
+                {Array.isArray(profile?.contacts) && profile.contacts.some(value => value !== null) && <div>Контакты:</div>}
 
                 {profile?.contacts && Object.keys(profile.contacts).map(key => (
                     <ContactItem key={key} title={key} value={profile.contacts[key]} />

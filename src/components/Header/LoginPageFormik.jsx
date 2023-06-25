@@ -12,30 +12,41 @@ const SignupSchema = Yup.object().shape({
         .max(50, 'Too Long!')
         .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
+    // captcha: Yup.string().required('Required'),
 });
 
-const LoginPage = (props) => {
-    if (props.isAuth) return <Navigate to='/profile' />;
+const LoginPage = ({ message, login, isAuth, captchaURL }) => {
+    if (isAuth) return <Navigate to='/profile' />;
 
     return (
         <div className={s.loginPage}>
             <h1>Авторизоваться</h1>
-            {props.message && <div>{props.message}</div>}
+            {message && <div>{message}</div>}
             <Formik
-                initialValues={{ password: '', email: "" }}
+                initialValues={{ password: '', email: "", rememberMe: false, captcha: '' }}
                 validationSchema={SignupSchema}
                 onSubmit={async (values) => {
-                    await new Promise((resolve) => setTimeout(resolve, 500));
-                    props.login(values.email, values.password, true);
+                    // alert(JSON.stringify(values, null, 2))
+                    // await new Promise((resolve) => setTimeout(resolve, 500));
+                    login(values.email, values.password, values.rememberMe, values.captcha);
                 }}
             >
-                {({ errors, touched}) => (
+                {({ errors, touched }) => (
                     <Form>
                         <Field name="email" type="email" />
                         {errors.email && touched.email ? <div>{errors.email}</div> : null}
+
                         <Field name="password" type="password" />
                         {errors.password && touched.password ? <div>{errors.password}</div> : null}
+
+                        <h2>Запомнить меня</h2>
+                        <Field name="rememberMe" type="checkbox" />
+
                         <button type="submit">Submit</button>
+
+                        {captchaURL && <Field name="captcha" type="text" />}
+                        {errors.captcha && touched.captcha ? <div>{errors.captcha}</div> : null}
+                        {captchaURL && <img src={captchaURL} alt="captcha" />}
                     </Form>
                 )}
             </Formik>
@@ -45,7 +56,8 @@ const LoginPage = (props) => {
 
 const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
-    message: state.auth.message
+    message: state.auth.message,
+    captchaURL: state.auth.captchaURL
 });
 
 export default connect(mapStateToProps, { login })(LoginPage);

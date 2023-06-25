@@ -11,7 +11,7 @@ let key = 0
 
 
 const MyPosts = (props) => {
-    console.log('Вызван MY POSTS')
+    // console.log('Вызван MY POSTS')
     let postsList = props.posts.map(post => <Post text={post.text} id={post.id} key={post.id + ++key} likesCount={post.likesCount} />)
 
     const openBtn = React.useRef()

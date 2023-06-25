@@ -3,8 +3,8 @@ import './App.css';
 import HeaderContainer from './components/Header/HeaderContainer';
 import { Navbar } from './components/Navbar/Navbar';
 import { Content } from './components/Content';
-import { LeftBar } from './components/LeftBar/LeftBar';
-import { RightBar } from './components/RightBar/RightBar';
+// import { LeftBar } from './components/LeftBar/LeftBar';
+// import { RightBar } from './components/RightBar/RightBar';
 import { connect } from 'react-redux';
 import { initializeApp } from './redux/app-reducer';
 import { Preloader } from './components/Common/Preloader';
@@ -19,10 +19,10 @@ const App = (props) => {
     return (
       <div className="App">
         <HeaderContainer />
-        <LeftBar />
+        {/* <LeftBar /> */}
         <Navbar />
         <Content store={props.store} />
-        <RightBar />
+        {/* <RightBar /> */}
       </div>
     );
   }

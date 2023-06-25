@@ -190,14 +190,26 @@ h4 {
   opacity: 0;
 }
 
-button {
-  color: white;
+.btn_submit,
+.btn_edit {
+  color: rgb(254, 255, 255);
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 20px 0;
+  height: 40px;
+  transform: translateX(-50px);
+}
+
+.btn_edit {
+  margin: auto 0;
+  padding: 10px;
 }
 
 .form_info_item {
   display: grid;
-  grid-template-areas: 'i p f';
-  grid-template-columns: 0.25fr 0.5fr 1fr;
+  grid-template-areas: 'i p f s';
+  grid-template-columns: 0.25fr 100px 1fr 1fr;
   grid-template-rows: 40px;
   justify-items: start;
   align-items: stretch;
@@ -225,6 +237,13 @@ button {
   grid-area: f;
 }
 
+.form_info_item span {
+  /* background-color: rgb(0, 110, 255); */
+  color: red;
+  grid-area: s;
+  align-self: center;
+}
+
 .form_info {
   animation: form 0.5s ease;
 }
@@ -233,7 +252,12 @@ button {
   0% {
     transform: scaleY(0);
   }
+
   100% {
     transform: scaleY(1);
   }
+}
+
+.error input {
+  background-color: pink
 }

@@ -19,7 +19,7 @@ export const UserHeader = memo(props => {
         }
     }
 
-    console.log('RENDER USER HEADER')
+    // console.log('RENDER USER HEADER')
     return (
         <div className={s.users_header}>
             <img className={s.background} src={profileBg} alt="background" />
@@ -37,7 +37,7 @@ export const UserHeader = memo(props => {
                     </div>
                 }
                 {isOwner &&
-                    <button onClick={() => setEditMode(!editMode)}>Edit info</button>
+                    <button className={s.btn_edit} onClick={() => setEditMode(!editMode)}>Edit info</button>
                 }
 
                 <div className="profile_info">
@@ -46,7 +46,7 @@ export const UserHeader = memo(props => {
                     {status && <Status status={status} updateStatus={updateStatus} />}
 
                     {isOwner && editMode ? (
-                        <ProfileInfoForm profile={profile} saveProfile={saveProfile} setEditMode={setEditMode}/>
+                        <ProfileInfoForm profile={profile} initialValues={profile} saveProfile={saveProfile} setEditMode={setEditMode}/>
                     ) : (
                         <ProfileInfo profile={profile} />
                     )}
