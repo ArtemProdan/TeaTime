@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TeaTime/static/css/main.ab7f6b46.css",
-    "main.js": "/TeaTime/static/js/main.b30a7467.js",
+    "main.css": "/TeaTime/static/css/main.7d303a36.css",
+    "main.js": "/TeaTime/static/js/main.69586e9e.js",
     "static/media/17.jpeg": "/TeaTime/static/media/17.1fa1a51b56d104e21dc0.jpeg",
     "static/media/telegram-chats2.jpg": "/TeaTime/static/media/telegram-chats2.a49fba9bd451a7886f7b.jpg",
     "static/media/telegram-chats.jpg": "/TeaTime/static/media/telegram-chats.8a72b362824f54531ab4.jpg",
@@ -24,32 +24,27 @@
     "static/media/12.avif": "/TeaTime/static/media/12.f2e466893045a8559a4d.avif",
     "static/media/13.avif": "/TeaTime/static/media/13.24ad25999e33f7b0c984.avif",
     "static/media/18.jpg": "/TeaTime/static/media/18.26db8d826af767d11d3e.jpg",
+    "static/media/networkError.webp": "/TeaTime/static/media/networkError.311e53faae39ba78dc0d.webp",
     "static/media/user_default.png": "/TeaTime/static/media/user_default.a6143582309785dca610.png",
     "static/media/tea.svg": "/TeaTime/static/media/tea.d845fb422a6da4f7f33cfb660b891f09.svg",
     "static/media/light_mode.svg": "/TeaTime/static/media/light_mode.5b01b41de59626022376.svg",
-    "static/media/catSVG.svg": "/TeaTime/static/media/catSVG.717296e7cd4a75eb8d6ff29cc2799582.svg",
     "static/media/send-paper.svg": "/TeaTime/static/media/send-paper.d885e6d847dece89eec27438110fda93.svg",
     "static/media/send-paper-white.svg": "/TeaTime/static/media/send-paper-white.637e7be19945b452ccfc700072ba4719.svg",
-    "static/media/groups.svg": "/TeaTime/static/media/groups.3206a8e4f0615388ed4877635e6e46e1.svg",
-    "static/media/next.svg": "/TeaTime/static/media/next.b1339433df2675a1906c.svg",
-    "static/media/profile.svg": "/TeaTime/static/media/profile.239b9a00193ed5b0c3e774e71a7c182d.svg",
+    "static/media/next.svg": "/TeaTime/static/media/next.b1339433df2675a1906c10f8dc97e79f.svg",
     "index.html": "/TeaTime/index.html",
     "static/media/heart.svg": "/TeaTime/static/media/heart.e1cd6a9144659caecbe5384f016fcde4.svg",
     "static/media/add.svg": "/TeaTime/static/media/add.14f49c85d92e1256fbce7e891e85b6ca.svg",
+    "static/media/camera.svg": "/TeaTime/static/media/camera.9e0d56c299e9ebcbf21be78bae6dec42.svg",
     "static/media/dark_mode.svg": "/TeaTime/static/media/dark_mode.bceb5c96fea54d3604ba.svg",
     "static/media/Union.svg": "/TeaTime/static/media/Union.fe17a515669479b1e649.svg",
-    "static/media/music.svg": "/TeaTime/static/media/music.9d91d63649401d9c0ac787aa77075e9b.svg",
     "static/media/delete.svg": "/TeaTime/static/media/delete.97373f4945fe96a61e24a5c53e4569b8.svg",
     "static/media/Close-Icon.svg": "/TeaTime/static/media/Close-Icon.a004a2d5d464d8ddbbb5.svg",
-    "static/media/gallery.svg": "/TeaTime/static/media/gallery.61833dc6752d75a17b25eef401024142.svg",
-    "static/media/news.svg": "/TeaTime/static/media/news.41e525e1022eb5b50a3cfa7ba3de9916.svg",
-    "static/media/messages.svg": "/TeaTime/static/media/messages.805cb87f369c4e873135293a96d30e56.svg",
     "static/media/logout.svg": "/TeaTime/static/media/logout.f882801a1c4b472e5f5666b43be105d0.svg",
-    "main.ab7f6b46.css.map": "/TeaTime/static/css/main.ab7f6b46.css.map",
-    "main.b30a7467.js.map": "/TeaTime/static/js/main.b30a7467.js.map"
+    "main.7d303a36.css.map": "/TeaTime/static/css/main.7d303a36.css.map",
+    "main.69586e9e.js.map": "/TeaTime/static/js/main.69586e9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab7f6b46.css",
-    "static/js/main.b30a7467.js"
+    "static/css/main.7d303a36.css",
+    "static/js/main.69586e9e.js"
   ]
 }
