@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TeaTime/static/css/main.7d303a36.css",
-    "main.js": "/TeaTime/static/js/main.69586e9e.js",
+    "main.css": "/TeaTime/static/css/main.51b4cb1c.css",
+    "main.js": "/TeaTime/static/js/main.1fd2b44f.js",
     "static/media/17.jpeg": "/TeaTime/static/media/17.1fa1a51b56d104e21dc0.jpeg",
     "static/media/telegram-chats2.jpg": "/TeaTime/static/media/telegram-chats2.a49fba9bd451a7886f7b.jpg",
     "static/media/telegram-chats.jpg": "/TeaTime/static/media/telegram-chats.8a72b362824f54531ab4.jpg",
@@ -40,11 +40,11 @@
     "static/media/delete.svg": "/TeaTime/static/media/delete.97373f4945fe96a61e24a5c53e4569b8.svg",
     "static/media/Close-Icon.svg": "/TeaTime/static/media/Close-Icon.a004a2d5d464d8ddbbb5.svg",
     "static/media/logout.svg": "/TeaTime/static/media/logout.f882801a1c4b472e5f5666b43be105d0.svg",
-    "main.7d303a36.css.map": "/TeaTime/static/css/main.7d303a36.css.map",
-    "main.69586e9e.js.map": "/TeaTime/static/js/main.69586e9e.js.map"
+    "main.51b4cb1c.css.map": "/TeaTime/static/css/main.51b4cb1c.css.map",
+    "main.1fd2b44f.js.map": "/TeaTime/static/js/main.1fd2b44f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d303a36.css",
-    "static/js/main.69586e9e.js"
+    "static/css/main.51b4cb1c.css",
+    "static/js/main.1fd2b44f.js"
   ]
 }
