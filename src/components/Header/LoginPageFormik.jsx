@@ -42,11 +42,11 @@ const LoginPage = ({ message, login, isAuth, captchaURL }) => {
                         <h2>Запомнить меня</h2>
                         <Field name="rememberMe" type="checkbox" />
 
-                        <button type="submit">Submit</button>
-
                         {captchaURL && <Field name="captcha" type="text" />}
                         {errors.captcha && touched.captcha ? <div>{errors.captcha}</div> : null}
                         {captchaURL && <img src={captchaURL} alt="captcha" />}
+                        
+                        <button type="submit">Submit</button>
                     </Form>
                 )}
             </Formik>

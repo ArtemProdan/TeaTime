@@ -5,14 +5,14 @@ const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     // headers: { 'API-KEY': '54398fa5-7a70-4d56-b172-361948f7ccb0' },
     // headers: { 'API-KEY': '5dac72e7-95e4-45f1-9e1b-e055e4330068' },
-    headers: { 'API-KEY': 'a1cf4e99-d380-4e08-a364-09bbcfdfd7fa' },
+    // headers: { 'API-KEY': 'a1cf4e99-d380-4e08-a364-09bbcfdfd7fa' },
     email: 'maxivanov312@gmail.com',
     password: 'socialnetworksamuraijs1234567890',
 })
 
 export const usersAPI = {
     getUsers(currentPage = 1, usersOnOnePage = 13) {
-        return instance.get(`users?count=${usersOnOnePage}&page=${currentPage}&term=${''}&friend=omit`)
+        return instance.get(`users?count=${usersOnOnePage}&page=${currentPage}&term=${'les'}&friend=omit`)
             .then(response => {
                 return response.data;
             });

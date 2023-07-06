@@ -25,6 +25,7 @@ export const Content = (props) => {
                 <Route path="/groups" element={<GalleryCat />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/shestil" element={<ShestilContainer />} />
+                <Route path="*" element={<div>PAGE NOT FOUND</div>} />
             </Routes>
         </div >
     )

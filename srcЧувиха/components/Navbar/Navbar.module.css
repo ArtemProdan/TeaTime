@@ -1,0 +1,42 @@
+.aside{
+    font-weight: 800;
+    padding: 25px 40px 10px 15px;
+    opacity: 0.9;
+}
+
+a{
+    text-decoration: none;
+    color: #2B0A15;
+    opacity: 1;
+}
+
+.item{
+    line-height: 26px;
+    color: #333;
+}
+
+a.active {
+    color: #93C088;
+}
+
+a:hover{
+    text-decoration: revert;
+}
+
+@media (max-width: 767px) {
+    .aside{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding-top: 80px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #f1f6f0;
+    }
+    .aside.active{
+        display: block;
+        z-index: 5;
+    }
+}

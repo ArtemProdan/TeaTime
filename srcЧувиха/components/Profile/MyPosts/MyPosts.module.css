@@ -1,0 +1,29 @@
+h4{
+    font-size: 24px;
+    color: #93C088;
+    margin-bottom: 15px;
+}
+.newPost{
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.newPost textarea{
+    margin-bottom: 15px;
+}
+.newPost button{
+    border-radius: 15px;
+    background-color: mediumpurple;
+    line-height: 34px;
+}
+
+.container{
+    padding: 0 20px 30px 20px;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none;
+}

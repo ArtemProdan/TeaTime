@@ -4,7 +4,6 @@ import { FaFacebook, FaInstagram, FaGithub, FaVk, FaTwitter, FaUserAlt, FaGlobe,
 import { Field, Form, Formik } from 'formik';
 
 export const ProfileInfoForm = (props) => {
-    // debugger
     const { profile, saveProfile, setEditMode, initialValues } = props
     const socialIcons = {
         facebook: <FaFacebook />,
@@ -16,6 +15,7 @@ export const ProfileInfoForm = (props) => {
         website: <FaGlobe />,
         youtube: <FaYoutube />
     }
+
 
     const ContactItem = ({ title, value }) => {
         const index = errorContact ? errorContact.indexOf(title.toLowerCase()) : -1;
@@ -53,39 +53,16 @@ export const ProfileInfoForm = (props) => {
         { name: "aboutMe", type: "text", label: "Обо мне" }
     ];
 
+    
     const [errorMessage, setErrorMessage] = useState(null);
     const [errorContact, setErrorContact] = useState(null);
+    // setErrorContact(errorMessage.map(message => message.match(/Contacts->(\w+)/)[1].toLowerCase()));
+    // const errorContact = errorMessage.map(message => message.match(/Contacts->(\w+)/)[1].toLowerCase());
+
     const [formError, setFormError] = useState(null);
-
-    console.log(formError);
-    console.log(errorContact);
     console.log(errorMessage);
-
-    const handleSubmit = (values) => {
-        return saveProfile(values).then(error => {
-            if (error) {
-                const formErrors = {};
-                error.forEach(message => {
-                    const match = message.match(/Contacts->(\w+)/);
-                    if (match) {
-                        const field = match[1];
-                        if (field === 'AboutMe' || field === 'FullName' || field === 'LookingForAJobDescription') {
-                            formErrors[field] = message;
-                        }
-                    }
-                });
-
-                setFormError(formErrors);
-                setErrorContact(error.map(message => message.match(/Contacts->(\w+)/)[1].toLowerCase()));
-
-                const promises = [setFormError, setErrorContact];
-                Promise.allSettled(promises).then((results) => results.forEach((result) => setErrorMessage(result) ));
-            } else {
-                setEditMode(false);
-            }
-        });
-    }
-
+    console.log(errorContact);
+    console.log(formError);
 
     if (!profile) {
         return <h1>Не получены пропсы</h1>;
@@ -93,8 +70,20 @@ export const ProfileInfoForm = (props) => {
     return (
         <div className={s.form_info}>
             <Formik
-                initialValues={initialValues}
-                onSubmit={handleSubmit}
+                initialValues={initialValues
+                    // {facebook: '', instagram: "", github: "", vk: "", twitter: "", mainlink: "", website: "", youtube: ""}
+                }
+
+                onSubmit={async (values) => {
+                    let error = await saveProfile(values);
+                    if (error) {
+                        setErrorMessage(error);
+                        setErrorContact(error.map(message => message.match(/Contacts->(\w+)/)[1].toLowerCase()));
+                    } else {
+                        setEditMode(false);
+                    }
+                }}
+
             >
                 <Form>
                     <button className={s.btn_submit} onClick={() => { }} type="submit">Save</button>
@@ -103,9 +92,7 @@ export const ProfileInfoForm = (props) => {
                         <div key={field.name} className={`${s.form_info_item} ${formError && s.error}`}>
                             <p>{field.label}</p>
                             {/* {formError[field.name] && <span>{formError[field.name]}</span> */}
-                            {formError && Object.values(formError).map(message => (
-                                <div>{message}</div>
-                            ))}
+                            {formError && <span>{formError}</span>}
                             <Field name={field.name} component="input" type={field.type} placeholder={field.label} />
                         </div>
                     ))}

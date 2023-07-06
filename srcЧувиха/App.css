@@ -1,0 +1,59 @@
+.app-wrapper{
+    display: flex;
+    padding-top: 60px;
+    height: 100vh;
+}
+.app-content{
+    padding: 0 15px 20px;
+    width: 100%;
+}
+
+h2{
+    font-size: 28px;
+    font-weight: 600;
+    color: #2b0a15;
+}
+
+button{
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.login{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.login button{
+    width: 100%;
+    background-color: #93C088;
+    border-radius: 25px;
+}
+textarea{
+    resize: none;
+}
+
+input,
+textarea{
+    font-size: 18px;
+    border: 1px solid #0000003b;
+    width: 100%;
+    border-radius: 25px;
+    padding: 10px 15px;
+    background-color: white;
+}
+input[type="checkbox"]{
+    width: 30px;
+    margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+    .app-wrapper{
+        padding-top: 40px;
+    }
+    .app-content{
+        padding: 0;
+    }
+}
