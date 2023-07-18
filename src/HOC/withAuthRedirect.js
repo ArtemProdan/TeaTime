@@ -1,9 +1,10 @@
+import { isAuth } from '../redux/users-selectors';
 import { Navigate } from 'react-router-dom'
-import React from 'react'
+import React  from 'react'
 import { connect } from "react-redux";
 
 
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state)  => ({
     isAuth: state.auth.isAuth
 });
 
@@ -18,3 +19,4 @@ export const withAuthRedirect = (Component) => {
     let ConnectedAuthRedirectComponent = connect(mapStateToProps)(RedirectComponent)
     return ConnectedAuthRedirectComponent;
 }
+

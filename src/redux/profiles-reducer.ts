@@ -1,4 +1,5 @@
 import { usersAPI, profileAPI } from "../API/api"
+import { PhotosType, ProfileType, UserType } from "../types/types"
 
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -14,9 +15,9 @@ const SET_STATUS = 'SET_STATUS'
 const SAVE_PHOTO_SUCCES = 'SAVE_PHOTO_SUCCES'
 
 let initialState = {
-    users: [],
-    myFriends: [],
-    profile: '',
+    users: [] as Array<UserType>,
+    myFriends: [] as Array<UserType>,
+    profile: null as ProfileType | null,
     usersOnOnePage: 11, //количестов пользователей на одной странице
     usersTotalCount: null, //получаем из response
     totalPagesCount: null, //подсчитываем
@@ -27,7 +28,7 @@ let initialState = {
 }
 
 
-const profilesReducer = (state = initialState, action) => {
+const profilesReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case FOLLOW:
             return {
@@ -97,26 +98,87 @@ const profilesReducer = (state = initialState, action) => {
         }
 
 
-        default: return state;
+        default: return state
     }
 }
 
-export const follow = (userId) => ({ type: FOLLOW, userId })
-export const unfollow = (userId) => ({ type: UNFOLLOW, userId })
-export const setUsers = (users) => ({ type: SET_USERS, users })
-export const setMyFriends = (myFriends) => ({ type: MY_FRIENDS, myFriends })
-export const setPage = (currentPage) => ({ type: SET_PAGE, currentPage })
-export const setUsersTotalCount = (count) => ({ type: SET_TOTAL_USERS_COUNT, count })
-export const setTotalPagesCount = (pages) => ({ type: SET_TOTAL_PAGES_COUNT, pages })
-export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
-export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
-export const toggleFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId })
-export const setStatus = (status) => ({ type: SET_STATUS, status })
-export const savePhotoSucces = (photos) => ({ type: SAVE_PHOTO_SUCCES, photos })
+type FollowActionType = {
+    type: typeof FOLLOW
+    userId: number
+}
+
+type UnfollowActionType = {
+    type: typeof UNFOLLOW
+    userId: number
+}
+
+type SetUsersActionType = {
+    type: typeof SET_USERS
+    users: Array<UserType>
+}
+
+type SetMyFriendsActionType = {
+    type: typeof MY_FRIENDS
+    myFriends: Array<UserType>
+}
+
+type SetPageActionType = {
+    type: typeof SET_PAGE
+    currentPage: number
+}
+
+type SetTotalUsersCountActionType = {
+    type: typeof SET_TOTAL_USERS_COUNT
+    count: number
+}
+
+type SetTotalPagesCountActionType = {
+    type: typeof SET_TOTAL_PAGES_COUNT
+    pages: number
+}
+
+type ToggleIsFetchingActionType = {
+    type: typeof TOGGLE_IS_FETCHING
+    isFetching: boolean
+}
+
+type SetUserProfileActionType = {
+    type: typeof SET_USER_PROFILE
+    profile: ProfileType
+}
+
+type ToggleFollowingProgressActionType = {
+    type: typeof TOGGLE_IS_FOLLOWING_PROGRESS
+    isFetching: boolean
+    userId: number
+}
+
+type SetStatusActionType = {
+    type: typeof SET_STATUS
+    status: string
+}
+
+type SavePhotoSuccessActionType = {
+    type: typeof SAVE_PHOTO_SUCCES
+    photos: PhotosType
+}
+
+const follow = (userId: number): FollowActionType => ({ type: FOLLOW, userId })
+const unfollow = (userId: number): UnfollowActionType => ({ type: UNFOLLOW, userId })
+const setUsers = (users: Array<UserType>): SetUsersActionType => ({ type: SET_USERS, users })
+//  const setMyFriends = (myFriends: Array<UserType>): SetMyFriendsActionType  => ({ type: MY_FRIENDS, myFriends })
+const setPage = (currentPage: number): SetPageActionType => ({ type: SET_PAGE, currentPage })
+const setUsersTotalCount = (count: number): SetTotalUsersCountActionType => ({ type: SET_TOTAL_USERS_COUNT, count })
+//  const setTotalPagesCount = (pages: number): SetTotalPagesCountActionType => ({ type: SET_TOTAL_PAGES_COUNT, pages })
+const toggleIsFetching = (isFetching: boolean): ToggleIsFetchingActionType => ({ type: TOGGLE_IS_FETCHING, isFetching })
+const setUserProfile = (profile: ProfileType): SetUserProfileActionType => ({ type: SET_USER_PROFILE, profile })
+const toggleFollowingProgress = (isFetching: boolean, userId: number): ToggleFollowingProgressActionType => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId })
+const setStatus = (status: string): SetStatusActionType => ({ type: SET_STATUS, status })
+const savePhotoSucces = (photos: PhotosType): SavePhotoSuccessActionType => ({ type: SAVE_PHOTO_SUCCES, photos })
 
 
-export const getUsersThunk = (currentPage, usersOnOnePage) => {
-    return async (dispatch) => {
+export const getUsersThunk = (currentPage: number, usersOnOnePage: number) => {
+    return async (dispatch: any) => {
         dispatch(toggleIsFetching(true))
         dispatch(setPage(currentPage))
 
@@ -127,8 +189,8 @@ export const getUsersThunk = (currentPage, usersOnOnePage) => {
     }
 }
 
-export const unfollowThunk = (userId) => {
-    return async (dispatch) => {
+export const unfollowThunk = (userId: number) => {
+    return async (dispatch: any) => {
         dispatch(toggleFollowingProgress(true, userId))
         let data = await usersAPI.unfollowUser(userId)
         if (data.resultCode === 0) {
@@ -138,8 +200,8 @@ export const unfollowThunk = (userId) => {
     }
 }
 
-export const followThunk = (userId) => {
-    return async (dispatch) => {
+export const followThunk = (userId: number) => {
+    return async (dispatch: any) => {
         dispatch(toggleFollowingProgress(true, userId))
         let data = await usersAPI.followUser(userId)
         if (data.resultCode === 0) { dispatch(follow(userId)) }
@@ -147,20 +209,20 @@ export const followThunk = (userId) => {
     }
 }
 
-export const getUserProfileThunk = (userId) => (dispatch) => {
+export const getUserProfileThunk = (userId: number) => (dispatch: any) => {
     profileAPI.getUserProfile(userId).then(response => {
         dispatch(setUserProfile(response.data))
-        console.log(response.data);
+        console.log(response.data)
     })
 }
 
-export const getStatus = (userId) => (dispatch) => {
+export const getStatus = (userId: number) => (dispatch: any) => {
     profileAPI.getStatus(userId).then(response => {
         dispatch(setStatus(response.data))
     })
 }
 
-export const updateStatus = (status) => (dispatch) => {
+export const updateStatus = (status: string) => (dispatch: any) => {
     profileAPI.updateStatus(status)
         .then(response => {
             if (response.data.resultCode === 0) {
@@ -169,23 +231,23 @@ export const updateStatus = (status) => (dispatch) => {
         })
 }
 
-export const savePhoto = (file) => async (dispatch) => {
+export const savePhoto = (file: any) => async (dispatch: any) => {
     const response = await profileAPI.savePhoto(file)
     if (response.data.resultCode === 0) {
         dispatch(savePhotoSucces(response.data.data.photos))
     }
 }
 
-export const saveProfile = (profile) => async (dispatch, getState) => {
-    const userId = getState().auth.userId;
-    const response = await profileAPI.saveProfile(profile);
+export const saveProfile = (profile: ProfileType) => async (dispatch: any, getState: any) => {
+    const userId = getState().auth.userId
+    const response = await profileAPI.saveProfile(profile)
 
     if (response.data.resultCode === 0) {
-        dispatch(getUserProfileThunk(userId));
+        dispatch(getUserProfileThunk(userId))
     } else {
-        return response.data.messages;
+        return response.data.messages
     }
-};
+}
 
 
 export default profilesReducer

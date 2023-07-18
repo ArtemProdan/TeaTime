@@ -9,7 +9,8 @@ import authReducer from './auth-reducer'
 import thunkMiddleware  from "redux-thunk";
 import appReducer from './app-reducer'
 
-let reducers = combineReducers({
+
+let rootReducer = combineReducers({
     postsData : postsReducer, 
     messagesData : dialogsReducer,
     profilesData : profilesReducer,
@@ -19,9 +20,14 @@ let reducers = combineReducers({
     app : appReducer,
 })
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let store = legacy_createStore (reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
+type RootReducerType = typeof rootReducer
 
+export type AppStateType = ReturnType<RootReducerType>
+
+// @ts-ignore
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+let store = legacy_createStore (rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)));
+// @ts-ignore
 window.store = store;
 
 export default store

@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {FC} from 'react';
+// @ts-ignore
 import s from './users.module.css';
+// @ts-ignore
 import userDefault from '../../img/user_default.png';
 import { NavLink } from 'react-router-dom';
 // import { Filter } from './Filter';
 // import Paginator from '../Common/Paginator/Paginator';
+import { UserType } from '../../types/types'
 
-export const Users = React.memo(props => {
+type PropsType = {
+    // totalUsersCount: number
+    // pageSize: number
+    // currentPage: number
+    // onPageChanged: (pageNumber: number) => void
+    users: Array<UserType>
+    followingInProgress: Array<number>
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
+    myId: number | null
+    // followed: boolean
+}
+
+export const Users: FC<PropsType> = React.memo(props => {
 
     return (
         <div className={s.users_wrapper}>
