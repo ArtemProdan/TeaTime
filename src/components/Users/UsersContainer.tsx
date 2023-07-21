@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { followThunk, unfollowThunk, getUsersThunk } from '../../redux/profiles-reducer';
-import { Users } from './Users';
+import { followThunk, unfollowThunk, getUsersThunk } from '../../redux/profiles-reducer.ts';
+import { Users } from './Users.tsx';
 import { Preloader } from "../Common/Preloader";
 // import { Navigate } from 'react-router-dom';
 import { withAuthRedirect } from '../../HOC/withAuthRedirect'

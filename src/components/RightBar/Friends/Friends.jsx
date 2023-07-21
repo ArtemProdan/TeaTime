@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 // import { getUsersThunk } from '../../../redux/profiles-reducer'
 import { usersAPI } from '../../../API/api'
-import { setMyFriends } from '../../../redux/profiles-reducer'
+import { setMyFriends } from '../../../redux/profiles-reducer.ts'
 
 let FriendsItem = (props) => {
     return (

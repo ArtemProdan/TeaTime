@@ -1,4 +1,4 @@
-import { auth } from './auth-reducer'
+import { auth } from './auth-reducer.ts'
 
 const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS'
 

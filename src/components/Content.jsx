@@ -4,7 +4,7 @@ import { Music } from './Music/Music'
 import News from './News/News'
 import GalleryCat from './GalleryCat/src/components/GalleryCat'
 import { Routes, Route } from 'react-router-dom';
-import UsersContainer from './Users/UsersContainer'
+import UsersContainer from './Users/UsersContainer.tsx'
 import ProfileContainer from './Profile/ProfileContainer'
 import LoginPage from './Header/LoginPageFormik'
 import { ShestilContainer } from './Shestil/ShestilContainer'

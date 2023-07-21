@@ -4,9 +4,9 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import { Navbar } from './components/Navbar/Navbar';
 import { Content } from './components/Content';
 import { LeftBar } from './components/LeftBar/LeftBar';
-import { RightBar } from './components/RightBar/RightBar';
+// import { RightBar } from './components/RightBar/RightBar';
 import { connect } from 'react-redux';
-import { initializeApp } from './redux/app-reducer';
+import { initializeApp } from './redux/app-reducer.ts';
 import { Preloader } from './components/Common/Preloader';
 import AuthError from './components/Common/Error/AuthError';
 
@@ -39,7 +39,7 @@ const App = ({ authError, initialized, initializeApp, store }) => {
       <LeftBar />
       <Navbar />
       <Content store={store} />
-      <RightBar />
+      {/* <RightBar /> */}
     </div>
   );
 };

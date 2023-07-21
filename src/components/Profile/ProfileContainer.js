@@ -2,7 +2,7 @@ import React from 'react'
 import { UserHeader } from "./UserHeader"
 import MyPostsContainer from '../MyPosts/MyPostsContainer'
 import { connect } from "react-redux"
-import { getUserProfileThunk, getStatus, updateStatus, savePhoto, saveProfile } from "../../redux/profiles-reducer"
+import { getUserProfileThunk, getStatus, updateStatus, savePhoto, saveProfile } from "../../redux/profiles-reducer.ts"
 import { getProfile, isAuth, myId } from '../../redux/users-selectors'
 import { useParams } from 'react-router-dom'
 import s from './Profile.module.css'

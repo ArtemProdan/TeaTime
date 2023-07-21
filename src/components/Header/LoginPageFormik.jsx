@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
 import s from './Header.module.css';
-import { login } from '../../redux/auth-reducer';
+import { login } from '../../redux/auth-reducer.ts';
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 import * as Yup from 'yup';
